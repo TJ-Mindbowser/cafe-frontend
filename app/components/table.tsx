@@ -1,9 +1,11 @@
+import Script from "next/script"
+
 export const Table = () => {
     return (
         <>
             <div className="relative overflow-x-auto shadow-md sm:rounded-lg mt-8">
                 <div className="p-4">
-                    <label for="table-search" className="sr-only">Search</label>
+                    <label htmlFor="table-search" className="sr-only">Search</label>
                     <div className="relative mt-1">
                         <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                             <svg className="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20"
@@ -22,7 +24,7 @@ export const Table = () => {
                             <th scope="col" className="p-4">
                                 <div className="flex items-center">
                                     <input id="checkbox-all-search" type="checkbox" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                    <label for="checkbox-all-search" className="sr-only">checkbox</label>
+                                    <label htmlFor="checkbox-all-search" className="sr-only">checkbox</label>
                                 </div>
                             </th>
                             <th scope="col" className="px-6 py-3">
@@ -48,11 +50,11 @@ export const Table = () => {
                             <td className="w-4 p-4">
                                 <div className="flex items-center">
                                     <input id="checkbox-table-search-1" type="checkbox" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                    <label for="checkbox-table-search-1" className="sr-only">checkbox</label>
+                                    <label htmlFor="checkbox-table-search-1" className="sr-only">checkbox</label>
                                 </div>
                             </td>
                             <th scope="row" className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
-                                Apple MacBook Pro 17"
+                                Apple MacBook Pro 17
                             </th>
                             <td className="px-6 py-4">
                                 Sliver
@@ -72,7 +74,7 @@ export const Table = () => {
                             <td className="w-4 p-4">
                                 <div className="flex items-center">
                                     <input id="checkbox-table-search-2" type="checkbox" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                    <label for="checkbox-table-search-2" className="sr-only">checkbox</label>
+                                    <label htmlFor="checkbox-table-search-2" className="sr-only">checkbox</label>
                                 </div>
                             </td>
                             <th scope="row" className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
@@ -95,7 +97,7 @@ export const Table = () => {
                             <td className="w-4 p-4">
                                 <div className="flex items-center">
                                     <input id="checkbox-table-search-3" type="checkbox" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                    <label for="checkbox-table-search-3" className="sr-only">checkbox</label>
+                                    <label htmlFor="checkbox-table-search-3" className="sr-only">checkbox</label>
                                 </div>
                             </td>
                             <th scope="row" className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
@@ -117,7 +119,7 @@ export const Table = () => {
                     </tbody>
                 </table>
             </div>
-            <script src="https://unpkg.com/flowbite@1.3.4/dist/flowbite.js"></script>
+            <Script src="https://unpkg.com/flowbite@1.3.4/dist/flowbite.js"></Script>
         </>
     )
 }

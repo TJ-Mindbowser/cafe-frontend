@@ -19,9 +19,9 @@ export const Category = ({ data }: any) => {
                         id="search" type="text" placeholder="Search Items" />
                 </div>
                 <div className="py-3 text-sm">
-                    {categories.map((category: any) => {
+                    {categories.map((category: any, id: any) => {
                         return (
-                            < div className="flex justify-start cursor-pointer text-gray-700 hover:text-blue-400 hover:bg-blue-100 rounded-md px-2 py-2 my-2" >
+                            < div key={id} className="flex justify-start cursor-pointer text-gray-700 hover:text-blue-400 hover:bg-blue-100 rounded-md px-2 py-2 my-2" >
                                 <span className={`bg-${category.status == 'active' ? 'green-400' : 'gray-400'} h-2 w-2 m-2 rounded-full`}></span>
                                 <div className="flex-grow font-medium px-2 capitalize">{category.name}</div>
                             </div>
