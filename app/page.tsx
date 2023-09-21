@@ -1,31 +1,34 @@
-import Image from 'next/image'
-import { Category } from './components/category'
-import { Product } from './components/product'
-import { Table } from './components/table'
-import { getCategory, getProducts, getOrders } from './apis'
-import { Modal } from './components/modal'
+"use client"
+import { useState, useEffect } from 'react'
+import { getCategory, getCustomer, getProducts } from './apis'
 
-async function fetchData() {
-  const categories = await getCategory()
-  const products = await getProducts()
-  const orders = await getOrders()
-  return { categories, products, orders }
-}
-
-export default async function Home() {
-  let { categories } = await fetchData()
+export default function Home() {
+  const [data, setData] = useState({})
+  useEffect(() => {
+    fetchData()
+  }, [])
+  const fetchData = async () => {
+    const categories = await getCategory()
+    const products = await getProducts()
+    const customers = await getCustomer()
+    setData({ categoryCount: categories.data.length, productCount: products.data.length, customerCount: customers.data.length })
+  }
   return (
-    <main className="flex min-h-screen">
-      <div className="w-/4 max-w-screen-xl">
-        <div className="flex flex-col justify-start p-4 px-3 py-10">
-          <Category
-            data={categories} />
-          <Product />
-        </div>
+    <>
+      <div className='flex justify-center align-center gap-4 mt-50'>
+        <section className="block max-w-sm p-6 bg-sky-200 text-white">
+          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Total Customers</h5>
+          <p className="font-normal text-gray-700 dark:text-gray-400">{data.customerCount}</p>
+        </section>
+        <section className="block max-w-sm p-6 bg-rose-500">
+          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Total Products</h5>
+          <p className="font-normal text-gray-700 dark:text-gray-400">{data.productCount}</p>
+        </section>
+        <section className="block max-w-sm p-6 bg-neutral-400">
+          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Total Categories</h5>
+          <p className="font-normal text-gray-700 dark:text-gray-400">{data.categoryCount}</p>
+        </section>
       </div>
-      <div className="w-full">
-        <Table />
-      </div>
-    </main>
+    </>
   )
 }
